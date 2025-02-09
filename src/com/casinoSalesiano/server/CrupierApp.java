@@ -19,20 +19,15 @@ public class CrupierApp {
 
             System.out.println("--- CASINO ABIERTO ---");
 
-            /* ArrayList<DataOutputStream> playersOutputs = new ArrayList<>(); */
-
             while (true) {
                 System.out.println("Esperando jugadores....");
                 playerSocket = serverSocket.accept();
 
-                // Entrada del cliente al servidor
                 DataInputStream playerInputStream = new DataInputStream(
                         new BufferedInputStream(playerSocket.getInputStream()));
-                // Salida del servidor al cliente
+
                 DataOutputStream playerOutputStream = new DataOutputStream(
                         new BufferedOutputStream(playerSocket.getOutputStream()));
-
-                // playersOutputs.add(playerOutputStream);
 
                 String name = playerInputStream.readUTF();
 
